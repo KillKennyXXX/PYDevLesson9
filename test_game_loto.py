@@ -27,6 +27,9 @@ class Test_Card(unittest.TestCase):
             self.assertEqual(self.card.check_card(barrel), 1) if count > 0 else self.assertEqual(self.card.check_card(barrel), 2)
             self.assertEqual(self.card.check_card(barrel), 0)
             self.assertFalse(barrel in self.card.barrels)
+        card2 = gl.Card()
+        self.assertFalse(card2 == self.card)
+        self.assertTrue(card2 != self.card)
 
 class Test_Bag(unittest.TestCase):
     def setUp(self):
@@ -45,5 +48,8 @@ class Test_Bag(unittest.TestCase):
         self.assertTrue(self.bag.barrel in range(90))
         self.assertTrue(self.bag.barrel != 0)
         self.assertEqual(len(self.bag.barrels), 1)
+        bag2 = gl.Bag()
+        self.assertFalse(bag2 == self.bag)
+        self.assertTrue(bag2 != self.bag)
 
 

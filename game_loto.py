@@ -65,6 +65,18 @@ class Card:
     def __len__(self):
         return len(self._barrels)
 
+    def __eq__(self, other):
+        if self.name == other.name and len(self) == len(other):
+            count = len(self)
+            while count:
+                if self.barrels[count] != other.barrels[count]:
+                    return False
+                count -= 1
+            return True
+
+    def __ne__(self, other):
+        return not self == other
+
 
 class Bag:
     def __init__(self):
@@ -91,6 +103,18 @@ class Bag:
 
     def __len__(self):
         return len(self._barrels)
+
+    def __eq__(self, other):
+        if len(self) == len(other):
+            count = len(self)
+            while count:
+                if self.barrels[count] != other.barrels[count]:
+                    return False
+                count -= 1
+            return True
+
+    def __ne__(self, other):
+        return not self == other
 
 
 
