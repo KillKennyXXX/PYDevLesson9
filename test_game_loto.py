@@ -51,5 +51,8 @@ class Test_Bag(unittest.TestCase):
         bag2 = gl.Bag()
         self.assertFalse(bag2 == self.bag)
         self.assertTrue(bag2 != self.bag)
+        bag3 = gl.Bag()
+        self.assertTrue(bag2 == bag3)
+        self.assertFalse(bag2 != bag3)
 
 
